@@ -8,6 +8,9 @@
 
 点 `Deploy a new site` 按钮 下载你 `fork`的本项目部署
 
+查看节点信息
+<https://github.com/3Kmfi6HP/argo-airport-paas#%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E4%BF%A1%E6%81%AF>
+
 ## 环境变量说明
 
 Nezha 的端口设置为 443 就会自动加 --tls
