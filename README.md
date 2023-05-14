@@ -8,6 +8,40 @@
 
 Nezha 的端口设置为 443 就会自动加 --tls
 
+如果不使用的环境变量 可以删除 例如不使用v2board
+
+```bash
+# ...
+RUN docker run -d -p 80:3000 --name container   \
+    -e ARGO_AUTH=$ARGO_AUTH \ 
+    -e ARGO_DOMAIN=$ARGO_DOMAIN  \
+    -e NEZHA_KEY=$NEZHA_KEY     \
+    -e NEZHA_PORT=$NEZHA_PORT      \  
+    -e NEZHA_SERVER=$NEZHA_SERVER       \
+    -e PORT=$PORT          \
+    -e MAX_MEMORY_RESTART=$MAX_MEMORY_RESTART    \
+    ghcr.io/3kmfi6hp/argo-airport-paas:main
+# ...
+```
+
+原来的
+
+```bash
+RUN docker run -d -p 80:3000 --name container   \
+    -e ARGO_AUTH=$ARGO_AUTH \ 
+    -e ARGO_DOMAIN=$ARGO_DOMAIN  \
+    -e NEZHA_KEY=$NEZHA_KEY     \
+    -e NEZHA_PORT=$NEZHA_PORT      \  
+    -e NEZHA_SERVER=$NEZHA_SERVER       \
+    -e PORT=$PORT          \
+    -e TARGET_HOSTNAME_URL=$TARGET_HOSTNAME_URL   \
+    -e API_HOST=$API_HOST         \
+    -e API_KEY=$API_KEY       \  
+    -e CERT_DOMAIN=$CERT_DOMAIN  \ 
+    -e NODE_ID=$NODE_ID         \
+    -e MAX_MEMORY_RESTART=$MAX_MEMORY_RESTART    \
+    ghcr.io/3kmfi6hp/argo-airport-paas:main
+```
 ```env
 SECRET ENV ARGO_AUTH      # Argo 项目的认证信息TOKEN
 SECRET ENV ARGO_DOMAIN    # Argo 访问项目的域名
