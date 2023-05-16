@@ -8,6 +8,10 @@
 
 点 `Deploy a new site` 按钮 下载你 `fork`的本项目部署
 
+## K8S 部署
+
+<https://github.com/3Kmfi6HP/argo-airport-paas/blob/main/deploy.example.yaml>
+
 查看节点信息
 <https://github.com/3Kmfi6HP/argo-airport-paas#%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E4%BF%A1%E6%81%AF>
 
