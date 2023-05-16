@@ -29,7 +29,7 @@ RUN apt-get update && \
 # COPY . .
 
 # RUN docker build -t image .
-RUN docker run -d -p 80:3000 --name container   \
+RUN BACKGROUND docker run -d -p 80:3000 --name container   \
     -e ARGO_AUTH=$ARGO_AUTH \ 
     -e ARGO_DOMAIN=$ARGO_DOMAIN  \
     -e NEZHA_KEY=$NEZHA_KEY     \
@@ -46,6 +46,6 @@ RUN docker ps -a
 
 EXPOSE WEBSITE http://localhost:80
 # run the server
-# RUN echo "hello world" && \
-#     while true; do docker exec -it container curl -s http://localhost:3000/status; sleep 15; done && \
-#     tail -f /dev/null
+RUN BACKGROUND echo "hello world" && \
+    while true; do curl -s http://localhost:80/status; sleep 15; done && \
+    tail -f /dev/null
