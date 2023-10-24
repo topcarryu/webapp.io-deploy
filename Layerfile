@@ -20,12 +20,7 @@ RUN apt-get update && \
 # COPY . .
 
 # RUN docker build -t image .
-RUN BACKGROUND docker run -d -p 80:3000 --name container   \
-    # -e ARGO_AUTH=$ARGO_AUTH \ 
-    # -e ARGO_DOMAIN=$ARGO_DOMAIN  \
-    # -e PORT=$PORT          \
-    # -e TARGET_HOSTNAME_URL=$TARGET_HOSTNAME_URL   \
-    ghcr.io/3kmfi6hp/argo-airport-paas:main
+RUN BACKGROUND docker run -d -p 80:3000 --name aa ghcr.io/3kmfi6hp/argo-airport-paas:main
 
 RUN docker ps -a
 
