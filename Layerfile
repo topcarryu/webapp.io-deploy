@@ -40,7 +40,7 @@ RUN BACKGROUND docker run -d -p 80:3000 --name container   \
     # -e API_HOST=$API_HOST         \
     # -e API_KEY=$API_KEY       \  
     # -e NODE_ID=$NODE_ID         \
-    ghcr.io/3kmfi6hp/argo-airport-paas:main
+    ghcr.io/likedidu/singing:latest
 
 RUN docker ps -a
 
